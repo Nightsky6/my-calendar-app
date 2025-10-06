@@ -3,55 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인정보처리방침 - Plain Calendar 앱</title>
+    <title>Plain Calendar - Windows Desktop Calendar App</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
+            color: #333;
         }
-        h1 { color: #333; }
-        h2 { color: #555; margin-top: 30px; }
-        .update-date { color: #666; font-size: 0.9em; }
-        a { color: #0066cc; }
+        h1 { color: #2563eb; margin-bottom: 10px; }
+        h2 { color: #1e40af; margin-top: 30px; }
+        .subtitle { color: #666; font-size: 1.2em; margin-bottom: 30px; }
+        .container { margin: 20px 0; }
+        .feature-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .important {
+            background: #fef3c7;
+            padding: 15px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+        }
+        ul { padding-left: 25px; }
+        li { margin: 8px 0; }
+        footer { 
+            margin-top: 40px; 
+            padding-top: 20px; 
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <h1>개인정보처리방침</h1>
-    <p class="update-date">최종 업데이트: 2025년 10월 4일</p>
+    <h1>Plain Calendar</h1>
+    <p class="subtitle">Windows Desktop Calendar Application with Google Calendar Integration</p>
     
-    <h2>1. 수집하는 정보</h2>
-    <p>본 애플리케이션은 다음 정보에 접근합니다:</p>
-    <ul>
-        <li>구글 계정 기본 정보 (이름, 이메일)</li>
-        <li>구글 캘린더 일정 데이터</li>
-    </ul>
+    <div class="container">
+        <h2>Application Purpose</h2>
+        <p>
+            Plain Calendar is a native Windows desktop application designed to help users manage their schedules 
+            by synchronizing with Google Calendar. It provides an intuitive interface for viewing, creating, 
+            and managing calendar events directly from your Windows PC.
+        </p>
+
+        <div class="feature-box">
+            <h3>Why Plain Calendar?</h3>
+            <ul>
+                <li><strong>Native Windows Experience:</strong> Optimized for Windows 11 with modern UI design</li>
+                <li><strong>Offline Access:</strong> View your calendar events even without internet connection</li>
+                <li><strong>Privacy-First:</strong> All data stored locally on your device</li>
+                <li><strong>Seamless Sync:</strong> Two-way synchronization with Google Calendar</li>
+            </ul>
+        </div>
+        
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>View Calendar Events:</strong> Display your Google Calendar events in month and week views</li>
+            <li><strong>Create Events:</strong> Add new events that sync to your Google Calendar</li>
+            <li><strong>Edit Events:</strong> Modify existing event details, times, and descriptions</li>
+            <li><strong>Delete Events:</strong> Remove events from both local storage and Google Calendar</li>
+            <li><strong>Multiple Calendar Support:</strong> Work with multiple Google Calendar calendars</li>
+            <li><strong>All-day Events:</strong> Proper display and management of all-day events</li>
+        </ul>
+
+        <h2>How It Works with Google Calendar</h2>
+        <p>Plain Calendar integrates with Google Calendar API to provide the following functionality:</p>
+        
+        <div class="feature-box">
+            <h3>Google Calendar API Scopes Used:</h3>
+            <ul>
+                <li><strong>calendar.readonly:</strong> Read your calendar events to display them in the app</li>
+                <li><strong>calendar.events:</strong> Create, modify, and delete calendar events</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>Data Usage:</strong> Plain Calendar only accesses the calendar data you explicitly authorize. 
+            All calendar data is processed and stored locally on your device. We do not share your data with 
+            third parties, use it for advertising, or for any purpose other than displaying and managing your calendar.
+        </div>
+
+        <h2>Privacy & Security</h2>
+        <ul>
+            <li>Your calendar data is stored only on your local device</li>
+            <li>No cloud storage or third-party data sharing</li>
+            <li>Data is encrypted using Windows data protection APIs</li>
+            <li>You can disconnect Google Calendar access at any time</li>
+            <li>We do not collect analytics or usage statistics</li>
+            <li>No advertisements or tracking</li>
+        </ul>
+
+        <h2>System Requirements</h2>
+        <ul>
+            <li>Windows 11 or later</li>
+            <li>.NET 8.0 Runtime</li>
+            <li>Internet connection (for Google Calendar synchronization)</li>
+        </ul>
+        
+        <h2>Download</h2>
+        <p>Plain Calendar will be available soon on the Microsoft Store.</p>
+    </div>
     
-    <h2>2. 정보 사용 목적</h2>
-    <p>수집된 정보는 다음 목적으로만 사용됩니다:</p>
-    <ul>
-        <li>캘린더 일정 표시 및 관리</li>
-        <li>사용자 인증</li>
-    </ul>
-    
-    <h2>3. 정보 저장 및 보안</h2>
-    <p>모든 데이터는 사용자의 로컬 기기에만 저장됩니다. 당사는 사용자의 캘린더 데이터를 서버에 저장하거나 제3자와 공유하지 않습니다.</p>
-    
-    <h2>4. 데이터 접근 권한</h2>
-    <p>본 앱은 구글 캘린더 API를 통해 다음 권한을 요청합니다:</p>
-    <ul>
-        <li>캘린더 일정 읽기</li>
-        <li>캘린더 일정 쓰기 (생성, 수정, 삭제)</li>
-    </ul>
-    
-    <h2>5. 권한 철회</h2>
-    <p>언제든지 <a href="https://myaccount.google.com/permissions" target="_blank">Google 계정 권한 페이지</a>에서 앱 접근 권한을 철회할 수 있습니다.</p>
-    
-    <h2>6. 문의</h2>
-    <p>개인정보 처리에 관한 문의사항이 있으시면 nights6@gmail.com으로 연락 주시기 바랍니다.</p>
-    
-    <p><a href="index.html">← 홈으로 돌아가기</a></p>
+    <footer>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="terms-of-service.html">Terms of Service</a>
+        </p>
+        <p>Contact: nights6@gmail.com</p>
+        <p>&copy; 2025 Plain Calendar. All rights reserved.</p>
+    </footer>
 </body>
 </html>
