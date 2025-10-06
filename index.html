@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plain Calendar 앱</title>
+    <title>Plain Calendar - Windows Desktop Calendar App</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
+            color: #333;
         }
-        h1 { color: #333; }
+        h1 { color: #2563eb; margin-bottom: 10px; }
+        h2 { color: #1e40af; margin-top: 30px; }
+        .subtitle { color: #666; font-size: 1.2em; margin-bottom: 30px; }
         .container { margin: 20px 0; }
+        .feature-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .important {
+            background: #fef3c7;
+            padding: 15px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+        }
+        ul { padding-left: 25px; }
+        li { margin: 8px 0; }
         footer { 
             margin-top: 40px; 
             padding-top: 20px; 
@@ -21,33 +38,87 @@
             text-align: center;
             color: #666;
         }
-        a { color: #0066cc; }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <h1>📅 Plain Calendar 앱</h1>
+    <h1>Plain Calendar</h1>
+    <p class="subtitle">Windows Desktop Calendar Application with Google Calendar Integration</p>
     
     <div class="container">
-        <h2>소개</h2>
-        <p>구글 캘린더와 연동되는 Windows 데스크톱 애플리케이션입니다.</p>
+        <h2>Application Purpose</h2>
+        <p>
+            Plain Calendar is a native Windows desktop application designed to help users manage their schedules 
+            by synchronizing with Google Calendar. It provides an intuitive interface for viewing, creating, 
+            and managing calendar events directly from your Windows PC.
+        </p>
+
+        <div class="feature-box">
+            <h3>Why Plain Calendar?</h3>
+            <ul>
+                <li><strong>Native Windows Experience:</strong> Optimized for Windows 11 with modern UI design</li>
+                <li><strong>Offline Access:</strong> View your calendar events even without internet connection</li>
+                <li><strong>Privacy-First:</strong> All data stored locally on your device</li>
+                <li><strong>Seamless Sync:</strong> Two-way synchronization with Google Calendar</li>
+            </ul>
+        </div>
         
-        <h2>주요 기능</h2>
+        <h2>Key Features</h2>
         <ul>
-            <li>구글 캘린더 일정 조회</li>
-            <li>일정 추가, 수정, 삭제</li>
-            <li>윈도우 네이티브 UI</li>
+            <li><strong>View Calendar Events:</strong> Display your Google Calendar events in month and week views</li>
+            <li><strong>Create Events:</strong> Add new events that sync to your Google Calendar</li>
+            <li><strong>Edit Events:</strong> Modify existing event details, times, and descriptions</li>
+            <li><strong>Delete Events:</strong> Remove events from both local storage and Google Calendar</li>
+            <li><strong>Multiple Calendar Support:</strong> Work with multiple Google Calendar calendars</li>
+            <li><strong>All-day Events:</strong> Proper display and management of all-day events</li>
+        </ul>
+
+        <h2>How It Works with Google Calendar</h2>
+        <p>Plain Calendar integrates with Google Calendar API to provide the following functionality:</p>
+        
+        <div class="feature-box">
+            <h3>Google Calendar API Scopes Used:</h3>
+            <ul>
+                <li><strong>calendar.readonly:</strong> Read your calendar events to display them in the app</li>
+                <li><strong>calendar.events:</strong> Create, modify, and delete calendar events</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>Data Usage:</strong> Plain Calendar only accesses the calendar data you explicitly authorize. 
+            All calendar data is processed and stored locally on your device. We do not share your data with 
+            third parties, use it for advertising, or for any purpose other than displaying and managing your calendar.
+        </div>
+
+        <h2>Privacy & Security</h2>
+        <ul>
+            <li>Your calendar data is stored only on your local device</li>
+            <li>No cloud storage or third-party data sharing</li>
+            <li>Data is encrypted using Windows data protection APIs</li>
+            <li>You can disconnect Google Calendar access at any time</li>
+            <li>We do not collect analytics or usage statistics</li>
+            <li>No advertisements or tracking</li>
+        </ul>
+
+        <h2>System Requirements</h2>
+        <ul>
+            <li>Windows 11 or later</li>
+            <li>.NET 8.0 Runtime</li>
+            <li>Internet connection (for Google Calendar synchronization)</li>
         </ul>
         
-        <h2>다운로드</h2>
-        <p>곧 출시 예정입니다.</p>
+        <h2>Download</h2>
+        <p>Plain Calendar will be available soon on the Microsoft Store.</p>
     </div>
     
     <footer>
         <p>
-            <a href="privacy-policy.html">개인정보처리방침</a> | 
-            <a href="terms-of-service.html">서비스 약관</a>
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="terms-of-service.html">Terms of Service</a>
         </p>
-        <p>문의: nights6@gmail.com</p>
+        <p>Contact: nights6@gmail.com</p>
+        <p>&copy; 2025 Plain Calendar. All rights reserved.</p>
     </footer>
 </body>
 </html>
