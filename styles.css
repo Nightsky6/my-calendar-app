@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* 별이 빛나는 배경 애니메이션 */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(135deg, #0c1445 0%, #1a2980 50%, #26d0ce 100%);
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+/* 달 애니메이션 */
+.moon {
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #f5f5dc 0%, #e6e6e6 40%, #d3d3d3 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(245, 245, 220, 0.3),
+        inset -10px -10px 0 rgba(200, 200, 200, 0.3);
+    animation: moonFloat 8s ease-in-out infinite;
+}
+
+/* 달 표면의 크레이터 */
+.moon::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    width: 12px;
+    height: 12px;
+    background: rgba(180, 180, 180, 0.4);
+    border-radius: 50%;
+    box-shadow: 
+        15px 10px 0 -2px rgba(180, 180, 180, 0.3),
+        -5px 20px 0 -3px rgba(180, 180, 180, 0.3);
+}
+
+@keyframes moonFloat {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translateY(-15px) translateX(10px);
+        opacity: 1;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* 헤더 */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(12, 20, 69, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #26d0ce;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo::before {
+    content: "⭐";
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #26d0ce;
+    background: rgba(38, 208, 206, 0.1);
+}
+
+/* 메인 섹션 */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #26d0ce, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #26d0ce, #1a2980);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(38, 208, 206, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(38, 208, 206, 0.4);
+}
+
+/* 섹션 스타일 */
+.section {
+    padding: 5rem 0;
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #0c1445;
+}
+
+/* 특징 그리드 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #26d0ce;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0c1445;
+    text-align: center;
+}
+
+.feature-card p {
+    color: #666;
+    text-align: center;
+}
+
+/* 프로그램 소개 */
+.programs {
+    background: linear-gradient(135deg, #0c1445 0%, #1a2980 100%);
+    color: white;
+}
+
+.programs h2 {
+    color: white !important;
+}
+
+.program-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.program-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.program-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.program-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.program-item:hover .program-icon {
+    transform: scale(1.1);
+}
+
+.program-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.program-link .program-item:hover {
+    background: rgba(38, 208, 206, 0.3);
+    border-color: rgba(38, 208, 206, 0.5);
+}
+
+.program-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #26d0ce;
+}
+
+/* 연락처 */
+.contact {
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #26d0ce;
+}
+
+.contact-icon-img {
+    width: 24px;
+    height: 24px;
+    color: #26d0ce;
+}
+
+/* 푸터 */
+footer {
+    background: #0c1445;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* 모바일에서 달 크기 조정 */
+    .moon {
+        width: 75px !important;
+        height: 75px !important;
+        top: 8% !important;
+        right: 10% !important;
+    }
+}
+
+/* 스크롤 애니메이션 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
