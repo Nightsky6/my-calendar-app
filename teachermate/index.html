@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Mate - Windows Desktop Classroom Management App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 { color: #2563eb; margin-bottom: 10px; }
+        h2 { color: #1e40af; margin-top: 30px; }
+        .subtitle { color: #666; font-size: 1.2em; margin-bottom: 30px; }
+        .container { margin: 20px 0; }
+        .feature-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .important {
+            background: #fef3c7;
+            padding: 15px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+        }
+        ul { padding-left: 25px; }
+        li { margin: 8px 0; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Teacher Mate</h1>
+    <p class="subtitle">Windows Desktop Classroom Management App with Google Calendar &amp; Google Tasks Integration</p>
+
+    <div class="container">
+        <h2>Application Purpose</h2>
+        <p>
+            Teacher Mate is a native Windows desktop application designed to help teachers efficiently
+            manage their classrooms. It provides tools for student management, timetable planning,
+            progress tracking, counseling records, seating arrangements, and more — all in one place.
+            Teacher Mate also integrates with Google Calendar and Google Tasks so teachers can manage
+            their schedules and to-do items without switching between apps.
+        </p>
+
+        <div class="feature-box">
+            <h3>Why Teacher Mate?</h3>
+            <ul>
+                <li><strong>All-in-One Tool:</strong> Manage students, timetables, schedules, notes, photos, and tasks from a single app</li>
+                <li><strong>Google Integration:</strong> Sync your schedule and tasks with Google Calendar and Google Tasks</li>
+                <li><strong>Privacy-First:</strong> All classroom data is stored locally on your device</li>
+                <li><strong>Cloud Backup:</strong> Securely back up and restore your data via Microsoft OneDrive</li>
+                <li><strong>Modern Windows UI:</strong> Optimized for Windows 11 with a clean, intuitive interface</li>
+            </ul>
+        </div>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Student Management:</strong> Maintain a student roster with photos and group assignments</li>
+            <li><strong>Timetable:</strong> Create and manage weekly class timetables with a default fallback schedule</li>
+            <li><strong>Seat Arrangement:</strong> Design and save classroom seating charts</li>
+            <li><strong>Progress Tracking:</strong> Record lesson progress by class and subject, including page numbers and content</li>
+            <li><strong>Counseling Records:</strong> Log and review individual student counseling notes</li>
+            <li><strong>Photo Album:</strong> Organize and display class photos with a customizable layout canvas</li>
+            <li><strong>My Notes:</strong> Write and manage personal teaching notes with category filtering</li>
+            <li><strong>Attendance &amp; Cleaning:</strong> Track attendance memos and cleaning duty assignments</li>
+            <li><strong>Google Calendar Sync:</strong> View, create, edit, and delete calendar events synced with Google Calendar</li>
+            <li><strong>Google Tasks Sync:</strong> Create, complete, and delete tasks synced with Google Tasks</li>
+            <li><strong>OneDrive Backup &amp; Restore:</strong> Back up and restore data per page (students, timetable, photos, notes) via Microsoft OneDrive</li>
+        </ul>
+
+        <h2>How It Works with Google Calendar &amp; Google Tasks</h2>
+        <p>Teacher Mate integrates with the Google Calendar API and Google Tasks API to provide the following functionality:</p>
+
+        <div class="feature-box">
+            <h3>Google API Scopes Used:</h3>
+            <ul>
+                <li><strong>openid:</strong> Verify the user's identity via Google Sign-In</li>
+                <li><strong>email:</strong> Retrieve the user's email address for account identification</li>
+                <li><strong>profile:</strong> Retrieve basic profile information (name, profile picture) for display within the app</li>
+                <li><strong>calendar.readonly:</strong> Read your Google Calendar events to display them in the app</li>
+                <li><strong>calendar.events:</strong> Create, modify, and delete calendar events synced with Google Calendar</li>
+                <li><strong>tasks:</strong> Create, modify, complete, and delete tasks synced with Google Tasks</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>Data Usage:</strong> Teacher Mate only accesses the Google Calendar and Google Tasks data
+            you explicitly authorize. All data is processed and stored locally on your device.
+            We do not share your data with third parties, use it for advertising, or for any purpose
+            other than displaying and managing your schedule and tasks within the app.
+        </div>
+
+        <h2>Privacy &amp; Security</h2>
+        <ul>
+            <li>All classroom data (students, timetables, notes, etc.) is stored only on your local device</li>
+            <li>Google Calendar and Tasks data is accessed solely to display and manage your schedule within the app</li>
+            <li>No data is shared with third parties or stored on external servers by Teacher Mate</li>
+            <li>OneDrive backup is performed using your own Microsoft account under your full control</li>
+            <li>You can disconnect your Google account at any time from within the app</li>
+            <li>No advertisements, analytics, or usage tracking</li>
+        </ul>
+
+        <h2>System Requirements</h2>
+        <ul>
+            <li>Windows 11 or later</li>
+            <li>.NET 8.0 Runtime</li>
+            <li>Internet connection (required for Google Sign-In, Google Calendar/Tasks sync, and OneDrive backup)</li>
+        </ul>
+
+        <h2>Download</h2>
+        <p>Teacher Mate is available on the Microsoft Store.</p>
+    </div>
+
+    <footer>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a>
+        </p>
+        <p>Contact: nightskyworks@gmail.com</p>
+        <p>&copy; 2025-2026 Teacher Mate. All rights reserved.</p>
+    </footer>
+</body>
+</html>
