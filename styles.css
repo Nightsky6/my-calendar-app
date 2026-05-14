@@ -275,12 +275,13 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    align-items: stretch; /* 추가 */
 }
 
 .program-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex; /* block → flex 변경 */
 }
 
 .program-item {
@@ -292,6 +293,13 @@ nav {
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;          /* 추가 */
+    flex-direction: column; /* 추가 */
+    width: 100%;            /* 추가 */
+}
+
+.program-item p {
+    flex: 1; /* 추가 — 설명 텍스트가 남은 공간을 채워 카드 높이 균등화 */
 }
 
 .program-icon {
