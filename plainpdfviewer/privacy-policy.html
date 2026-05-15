@@ -32,72 +32,181 @@
             border-radius: 3px;
             font-size: 0.9em;
         }
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .lang-btn {
+            padding: 6px 18px;
+            border: 1px solid #1d4ed8;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            background: white;
+            color: #1d4ed8;
+            transition: background 0.15s, color 0.15s;
+        }
+        .lang-btn.active {
+            background: #1d4ed8;
+            color: white;
+        }
+        .lang-btn:hover:not(.active) {
+            background: #eff6ff;
+        }
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
     </style>
 </head>
 <body>
-    <h1>개인정보처리방침</h1>
-    <p class="update-date">최종 업데이트: 2026년 5월 15일</p>
 
-    <div class="important">
-        <strong>Plain PDF Viewer는 어떠한 개인정보도 수집, 전송, 저장하지 않습니다.</strong>
-        모든 작업은 사용자의 로컬 기기에서만 수행됩니다.
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('ko')">한국어</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
     </div>
 
-    <h2>1. 소개</h2>
-    <p>본 개인정보처리방침은 Plain PDF Viewer(이하 "본 애플리케이션")가 사용자의 정보를 어떻게 처리하는지 설명합니다. Plain PDF Viewer는 PDF 문서를 열람하기 위한 Windows 로컬 데스크톱 애플리케이션으로, 어떠한 외부 서버나 서비스에도 연결하지 않습니다.</p>
+    <!-- 한국어 -->
+    <div id="lang-ko" class="lang-section active">
+        <h1>개인정보처리방침</h1>
+        <p class="update-date">최종 업데이트: 2026년 5월 15일</p>
 
-    <h2>2. 수집하는 정보</h2>
+        <div class="important">
+            <strong>Plain PDF Viewer는 어떠한 개인정보도 수집, 전송, 저장하지 않습니다.</strong>
+            모든 작업은 사용자의 로컬 기기에서만 수행됩니다.
+        </div>
 
-    <div class="important">
-        <strong>본 애플리케이션은 개인정보를 일절 수집하지 않습니다.</strong>
-        <ul style="margin: 10px 0;">
-            <li>계정 또는 로그인 불필요</li>
-            <li>분석 데이터 또는 사용 통계 수집 없음</li>
-            <li>기기 정보 전송 없음</li>
-            <li>쿠키 또는 추적 기술 미사용</li>
-            <li>네트워크 연결 없음</li>
+        <h2>1. 소개</h2>
+        <p>본 개인정보처리방침은 Plain PDF Viewer(이하 "본 애플리케이션")가 사용자의 정보를 어떻게 처리하는지 설명합니다. Plain PDF Viewer는 PDF 문서를 열람하기 위한 Windows 로컬 데스크톱 애플리케이션으로, 어떠한 외부 서버나 서비스에도 연결하지 않습니다.</p>
+
+        <h2>2. 수집하는 정보</h2>
+        <div class="important">
+            <strong>본 애플리케이션은 개인정보를 일절 수집하지 않습니다.</strong>
+            <ul style="margin: 10px 0;">
+                <li>계정 또는 로그인 불필요</li>
+                <li>분석 데이터 또는 사용 통계 수집 없음</li>
+                <li>기기 정보 전송 없음</li>
+                <li>쿠키 또는 추적 기술 미사용</li>
+                <li>네트워크 연결 없음</li>
+            </ul>
+        </div>
+
+        <h2>3. 애플리케이션 동작 방식</h2>
+        <p>Plain PDF Viewer는 완전히 오프라인 로컬 환경에서 동작합니다:</p>
+        <ul>
+            <li><strong>PDF 열람:</strong> 기기에 저장된 PDF 파일을 열어 표시합니다.</li>
+            <li><strong>페이지 탐색 및 검색:</strong> 모든 처리는 로컬에서만 수행되며 외부로 전송되지 않습니다.</li>
+            <li><strong>바로가기(QuickJump):</strong> 사용자가 등록한 검색어 바로가기 목록은 로컬 Windows 레지스트리에만 저장됩니다.</li>
+            <li><strong>환경설정:</strong> 화면 모드, 줌, 다크모드 등 설정값은 로컬 레지스트리에만 저장됩니다.</li>
+            <li><strong>인쇄:</strong> 이미지 데이터를 로컬 프린터로 직접 전송하며 외부 서비스가 개입하지 않습니다.</li>
         </ul>
+
+        <h2>4. 로컬 데이터 저장</h2>
+        <p>Plain PDF Viewer가 저장하는 유일한 데이터는 다음과 같습니다:</p>
+        <ul>
+            <li><strong>환경설정:</strong> 다크모드, 줌 수준, 레이아웃 등 앱 설정값 — Windows 레지스트리 (<code>HKCU\Software\PlainPDFViewer</code>)에 저장</li>
+            <li><strong>바로가기 목록:</strong> 사용자가 직접 등록한 검색어 및 이름 — Windows 레지스트리 (<code>HKCU\Software\PlainPDFViewer\QuickJumps</code>)에 저장</li>
+        </ul>
+        <p>이 데이터는 기기 밖으로 전송되지 않으며, 애플리케이션을 제거하면 함께 삭제됩니다.</p>
+
+        <h2>5. 제3자 데이터 공유</h2>
+        <p>Plain PDF Viewer는 어떠한 데이터도 제3자와 공유하지 않습니다. 본 애플리케이션은 외부 서버나 서비스와 통신하지 않습니다.</p>
+
+        <h2>6. 지원 파일 형식</h2>
+        <p>본 애플리케이션은 로컬 저장소의 PDF 파일을 열람 목적으로만 읽습니다. PDF 데이터는 업로드, 전송 또는 외부에 저장되지 않습니다. PDFium 라이브러리를 사용하여 렌더링하며, 모든 처리는 로컬에서 완료됩니다.</p>
+
+        <h2>7. 아동 개인정보 보호</h2>
+        <p>Plain PDF Viewer는 연령에 관계없이 어떠한 사용자의 정보도 수집하지 않습니다. 본 애플리케이션은 모든 연령대가 안전하게 사용할 수 있습니다.</p>
+
+        <h2>8. 사용자 권리 및 선택</h2>
+        <ul>
+            <li><strong>바로가기 목록:</strong> 애플리케이션 내에서 언제든지 항목을 삭제할 수 있습니다.</li>
+            <li><strong>환경설정 초기화:</strong> 레지스트리 항목을 수동으로 삭제하거나 앱을 제거하면 모든 설정이 제거됩니다.</li>
+            <li><strong>완전 제거:</strong> 애플리케이션을 제거하면 관련된 모든 레지스트리 항목이 함께 삭제됩니다.</li>
+        </ul>
+
+        <h2>9. 개인정보처리방침 변경</h2>
+        <p>본 개인정보처리방침은 필요에 따라 업데이트될 수 있습니다. 변경 사항은 이 페이지에 "최종 업데이트" 날짜와 함께 게시됩니다.</p>
+
+        <h2>10. 문의</h2>
+        <p>본 개인정보처리방침에 관한 문의사항이 있으시면 아래로 연락해 주세요:</p>
+        <p><strong>이메일:</strong> nightskyworks@gmail.com</p>
     </div>
 
-    <h2>3. 애플리케이션 동작 방식</h2>
-    <p>Plain PDF Viewer는 완전히 오프라인 로컬 환경에서 동작합니다:</p>
-    <ul>
-        <li><strong>PDF 열람:</strong> 기기에 저장된 PDF 파일을 열어 표시합니다.</li>
-        <li><strong>페이지 탐색 및 검색:</strong> 모든 처리는 로컬에서만 수행되며 외부로 전송되지 않습니다.</li>
-        <li><strong>바로가기(QuickJump):</strong> 사용자가 등록한 검색어 바로가기 목록은 로컬 Windows 레지스트리에만 저장됩니다.</li>
-        <li><strong>환경설정:</strong> 화면 모드, 줌, 다크모드 등 설정값은 로컬 레지스트리에만 저장됩니다.</li>
-        <li><strong>인쇄:</strong> 이미지 데이터를 로컬 프린터로 직접 전송하며 외부 서비스가 개입하지 않습니다.</li>
-    </ul>
+    <!-- English -->
+    <div id="lang-en" class="lang-section">
+        <h1>Privacy Policy</h1>
+        <p class="update-date">Last Updated: May 15, 2026</p>
 
-    <h2>4. 로컬 데이터 저장</h2>
-    <p>Plain PDF Viewer가 저장하는 유일한 데이터는 다음과 같습니다:</p>
-    <ul>
-        <li><strong>환경설정:</strong> 다크모드, 줌 수준, 레이아웃 등 앱 설정값 — Windows 레지스트리 (<code>HKCU\Software\PlainPDFViewer</code>)에 저장</li>
-        <li><strong>바로가기 목록:</strong> 사용자가 직접 등록한 검색어 및 이름 — Windows 레지스트리 (<code>HKCU\Software\PlainPDFViewer\QuickJumps</code>)에 저장</li>
-    </ul>
-    <p>이 데이터는 기기 밖으로 전송되지 않으며, 애플리케이션을 제거하면 함께 삭제됩니다.</p>
+        <div class="important">
+            <strong>Plain PDF Viewer does not collect, transmit, or store any personal information.</strong>
+            All operations are performed entirely on your local device.
+        </div>
 
-    <h2>5. 제3자 데이터 공유</h2>
-    <p>Plain PDF Viewer는 어떠한 데이터도 제3자와 공유하지 않습니다. 본 애플리케이션은 외부 서버나 서비스와 통신하지 않습니다.</p>
+        <h2>1. Introduction</h2>
+        <p>This Privacy Policy describes how Plain PDF Viewer ("the Application") handles your information. Plain PDF Viewer is a local Windows desktop application for viewing PDF documents and does not connect to any external servers or services.</p>
 
-    <h2>6. 지원 파일 형식</h2>
-    <p>본 애플리케이션은 로컬 저장소의 PDF 파일을 열람 목적으로만 읽습니다. PDF 데이터는 업로드, 전송 또는 외부에 저장되지 않습니다. PDFium 라이브러리를 사용하여 렌더링하며, 모든 처리는 로컬에서 완료됩니다.</p>
+        <h2>2. Information We Collect</h2>
+        <div class="important">
+            <strong>We collect NO personal information whatsoever.</strong>
+            <ul style="margin: 10px 0;">
+                <li>No account or login required</li>
+                <li>No analytics or usage statistics collected</li>
+                <li>No device information transmitted</li>
+                <li>No cookies or tracking technologies used</li>
+                <li>No network connections made</li>
+            </ul>
+        </div>
 
-    <h2>7. 아동 개인정보 보호</h2>
-    <p>Plain PDF Viewer는 연령에 관계없이 어떠한 사용자의 정보도 수집하지 않습니다. 본 애플리케이션은 모든 연령대가 안전하게 사용할 수 있습니다.</p>
+        <h2>3. How the Application Works</h2>
+        <p>Plain PDF Viewer operates entirely offline and locally:</p>
+        <ul>
+            <li><strong>PDF Display:</strong> Opens and displays PDF files stored on your device.</li>
+            <li><strong>Page Navigation &amp; Search:</strong> All processing is performed locally and nothing is transmitted externally.</li>
+            <li><strong>QuickJump Shortcuts:</strong> User-registered keyword shortcuts are stored only in the local Windows Registry.</li>
+            <li><strong>Preferences:</strong> Settings such as view mode, zoom level, and dark mode are stored only in the local Registry.</li>
+            <li><strong>Print:</strong> Document data is sent directly to your local printer — no external service is involved.</li>
+        </ul>
 
-    <h2>8. 사용자 권리 및 선택</h2>
-    <ul>
-        <li><strong>바로가기 목록:</strong> 애플리케이션 내에서 언제든지 항목을 삭제할 수 있습니다.</li>
-        <li><strong>환경설정 초기화:</strong> 레지스트리 항목을 수동으로 삭제하거나 앱을 제거하면 모든 설정이 제거됩니다.</li>
-        <li><strong>완전 제거:</strong> 애플리케이션을 제거하면 관련된 모든 레지스트리 항목이 함께 삭제됩니다.</li>
-    </ul>
+        <h2>4. Local Data Storage</h2>
+        <p>The only data stored by Plain PDF Viewer is:</p>
+        <ul>
+            <li><strong>Preferences:</strong> App settings such as dark mode, zoom level, and layout — stored in Windows Registry (<code>HKCU\Software\PlainPDFViewer</code>)</li>
+            <li><strong>QuickJump list:</strong> User-registered keywords and labels — stored in Windows Registry (<code>HKCU\Software\PlainPDFViewer\QuickJumps</code>)</li>
+        </ul>
+        <p>This data never leaves your device and can be removed by uninstalling the application.</p>
 
-    <h2>9. 개인정보처리방침 변경</h2>
-    <p>본 개인정보처리방침은 필요에 따라 업데이트될 수 있습니다. 변경 사항은 이 페이지에 "최종 업데이트" 날짜와 함께 게시됩니다.</p>
+        <h2>5. Data Sharing and Third Parties</h2>
+        <p>Plain PDF Viewer does not share any data with third parties. The application does not communicate with any external servers or services.</p>
 
-    <h2>10. 문의</h2>
-    <p>본 개인정보처리방침에 관한 문의사항이 있으시면 아래로 연락해 주세요:</p>
-    <p><strong>이메일:</strong> nightskyworks@gmail.com</p>
+        <h2>6. Supported File Formats</h2>
+        <p>The application reads PDF files from your local storage for display purposes only. No data is uploaded, transmitted, or stored externally. Rendering is performed locally using the PDFium library.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>Plain PDF Viewer does not collect any information from any users, regardless of age. The application is safe for use by all ages.</p>
+
+        <h2>8. Your Rights and Choices</h2>
+        <ul>
+            <li><strong>QuickJump list:</strong> Individual entries can be deleted from within the application at any time.</li>
+            <li><strong>Reset Preferences:</strong> All settings can be removed by manually deleting the registry entries or uninstalling the app.</li>
+            <li><strong>Full Removal:</strong> Uninstalling the application removes all associated registry entries.</li>
+        </ul>
+
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, please contact us at:</p>
+        <p><strong>Email:</strong> nightskyworks@gmail.com</p>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            event.target.classList.add('active');
+            document.documentElement.lang = lang;
+        }
+    </script>
 </body>
 </html>
