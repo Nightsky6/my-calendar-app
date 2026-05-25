@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nightsky Works - Apps</title>
     <link rel="stylesheet" href="styles.css?v=2">
+    <style>
+        .lang-toggle {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.35);
+            color: white;
+            padding: 5px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            transition: background 0.15s;
+        }
+        .lang-toggle:hover { background: rgba(255,255,255,0.25); }
+    </style>
 </head>
 <body>
     <div class="stars" id="stars">
@@ -13,12 +28,13 @@
 
     <header>
         <nav>
-            <a href="#" class="logo">밤하늘 제작소</a>
+            <a href="#" class="logo" data-ko="밤하늘 제작소" data-en="Nightsky Works">밤하늘 제작소</a>
             <ul class="nav-links">
-                <li><a href="#home">홈</a></li>
-                <li><a href="#features">특징</a></li>
-                <li><a href="#programs">프로그램</a></li>
-                <li><a href="#contact">연락처</a></li>
+                <li><a href="#home" data-ko="홈" data-en="Home">홈</a></li>
+                <li><a href="#features" data-ko="특징" data-en="Features">특징</a></li>
+                <li><a href="#programs" data-ko="프로그램" data-en="Apps">프로그램</a></li>
+                <li><a href="#contact" data-ko="연락처" data-en="Contact">연락처</a></li>
+                <li><button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button></li>
             </ul>
         </nav>
     </header>
@@ -26,34 +42,34 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Nightsky Works</h1>
-            <p>교육용 프로그램 개발</p>
-            <a href="#programs" class="cta-button">애플리케이션 보기</a>
+            <p data-ko="교육용 프로그램 개발" data-en="Educational App Development">교육용 프로그램 개발</p>
+            <a href="#programs" class="cta-button" data-ko="애플리케이션 보기" data-en="View Applications">애플리케이션 보기</a>
         </div>
     </section>
 
     <section class="section" id="features">
         <div class="container">
-            <h2 class="fade-in">이런 것들을 만들어보고 있어요</h2>
+            <h2 class="fade-in" data-ko="이런 것들을 만들어보고 있어요" data-en="What We're Building">이런 것들을 만들어보고 있어요</h2>
             <div class="features-grid">
                 <div class="feature-card fade-in">
                     <span class="feature-icon">📝</span>
-                    <h3>간단한 도구들</h3>
-                    <p>복잡하지 않고 바로 쓸 수 있는 작은 프로그램들을 만들고 있습니다.</p>
+                    <h3 data-ko="간단한 도구들" data-en="Simple Tools">간단한 도구들</h3>
+                    <p data-ko="복잡하지 않고 바로 쓸 수 있는 작은 프로그램들을 만들고 있습니다." data-en="We build small programs that are simple and ready to use right away.">복잡하지 않고 바로 쓸 수 있는 작은 프로그램들을 만들고 있습니다.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <span class="feature-icon">🎯</span>
-                    <h3>실제 필요한 것</h3>
-                    <p>현장에서 필요한 기능을 넣으려고 하고 있습니다.</p>
+                    <h3 data-ko="실제 필요한 것" data-en="What's Actually Needed">실제 필요한 것</h3>
+                    <p data-ko="현장에서 필요한 기능을 넣으려고 하고 있습니다." data-en="We focus on features that are truly needed in real classroom environments.">현장에서 필요한 기능을 넣으려고 하고 있습니다.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <span class="feature-icon">💭</span>
-                    <h3>아이디어 실험</h3>
-                    <p>좋은 아이디어를 주시면 최대한 반영하겠습니다.</p>
+                    <h3 data-ko="아이디어 실험" data-en="Ideas & Experiments">아이디어 실험</h3>
+                    <p data-ko="좋은 아이디어를 주시면 최대한 반영하겠습니다." data-en="Share your ideas and we'll do our best to incorporate them.">좋은 아이디어를 주시면 최대한 반영하겠습니다.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <span class="feature-icon">🔧</span>
-                    <h3>지속적 개선</h3>
-                    <p>더 유용한 기능을 위해 지속적으로 업데이트하겠습니다.</p>
+                    <h3 data-ko="지속적 개선" data-en="Continuous Improvement">지속적 개선</h3>
+                    <p data-ko="더 유용한 기능을 위해 지속적으로 업데이트하겠습니다." data-en="We continuously update our apps to make them more useful.">더 유용한 기능을 위해 지속적으로 업데이트하겠습니다.</p>
                 </div>
             </div>
         </div>
@@ -61,83 +77,83 @@
 
     <section class="section programs" id="programs">
         <div class="container">
-            <h2 class="fade-in">MS Store에서 만나볼 수 있어요</h2>
+            <h2 class="fade-in" data-ko="MS Store에서 만나볼 수 있어요" data-en="Available on the Microsoft Store">MS Store에서 만나볼 수 있어요</h2>
             <div class="program-list">
                 <a href="https://apps.microsoft.com/detail/9N1TG51MFCN0?hl=ko-kr&gl=KR&ocid=pdpshare" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/plaincalendar.png" alt="Plain Calendar 아이콘" class="program-icon">
-                        <h3>Plain 캘린더</h3>
-                        <p>Google 캘린더 & Tasks와 동기화되는 Windows 캘린더 앱입니다.</p>
+                        <img src="Images/plaincalendar.png" alt="Plain Calendar" class="program-icon">
+                        <h3 data-ko="Plain 캘린더" data-en="Plain Calendar">Plain 캘린더</h3>
+                        <p data-ko="Google 캘린더 & Tasks와 동기화되는 Windows 캘린더 앱입니다." data-en="A Windows calendar app that syncs with Google Calendar & Tasks.">Google 캘린더 & Tasks와 동기화되는 Windows 캘린더 앱입니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9MSP97B7T749?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/classtools.png" alt="수업함 아이콘" class="program-icon">
-                        <h3>수업함</h3>
-                        <p>교실에서 필요한 모든 도구 모음 앱니다. 타이머, 자리 배치 등을 지원합니다</p>
+                        <img src="Images/classtools.png" alt="수업함" class="program-icon">
+                        <h3 data-ko="수업함" data-en="Class Toolbox">수업함</h3>
+                        <p data-ko="교실에서 필요한 모든 도구 모음 앱입니다. 타이머, 자리 배치 등을 지원합니다." data-en="An all-in-one classroom toolkit. Supports timers, seating arrangements, and more.">교실에서 필요한 모든 도구 모음 앱입니다. 타이머, 자리 배치 등을 지원합니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9N0TC3WWNBQF?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/flashcard.png" alt="Everyday 영단어 암기장 아이콘" class="program-icon">
-                        <h3>영단어 메이트</h3>
-                        <p>단어장 관리부터 플래시카드, 학습 게임, 저널 쓰기 등을 지원합니다.</p>
+                        <img src="Images/flashcard.png" alt="영단어 메이트" class="program-icon">
+                        <h3 data-ko="영단어 메이트" data-en="Everyday Words Mate">영단어 메이트</h3>
+                        <p data-ko="단어장 관리부터 플래시카드, 학습 게임, 저널 쓰기 등을 지원합니다." data-en="Supports vocabulary management, flashcards, learning games, journal writing, and more.">단어장 관리부터 플래시카드, 학습 게임, 저널 쓰기 등을 지원합니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9NK18TRFXL0V?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/timer.png" alt="발표용 타이머 아이콘" class="program-icon">
-                        <h3>발표용 타이머</h3>
-                        <p>PPT 위에 띄워 쓸 수 있는 반투명 오버레이 타이머로 발표 시간 관리를 할 수 있습니다</p>
+                        <img src="Images/timer.png" alt="발표용 타이머" class="program-icon">
+                        <h3 data-ko="발표용 타이머" data-en="Presentation Timer">발표용 타이머</h3>
+                        <p data-ko="PPT 위에 띄워 쓸 수 있는 반투명 오버레이 타이머로 발표 시간 관리를 할 수 있습니다." data-en="A semi-transparent overlay timer that floats over your slides to help manage presentation time.">PPT 위에 띄워 쓸 수 있는 반투명 오버레이 타이머로 발표 시간 관리를 할 수 있습니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9MZJSH16L9QD?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/teachermate.png" alt="티처 메이트 아이콘" class="program-icon">
-                        <h3>티처 메이트</h3>
-                        <p>교사들을 위한 업무 프로그램입니다. 시간표, 일정, 자리 관리 등 을 지원합니다</p>
+                        <img src="Images/teachermate.png" alt="티처 메이트" class="program-icon">
+                        <h3 data-ko="티처 메이트" data-en="Teacher Mate">티처 메이트</h3>
+                        <p data-ko="교사들을 위한 업무 프로그램입니다. 시간표, 일정, 자리 관리 등을 지원합니다." data-en="A productivity app for teachers. Supports timetables, schedules, seating management, and more.">교사들을 위한 업무 프로그램입니다. 시간표, 일정, 자리 관리 등을 지원합니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9N1J1FS48HJM?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/learning.png" alt="나의 학습일지 아이콘" class="program-icon">
-                        <h3>나의 학습일지</h3>
-                        <p>학습 기록부터 D-Day 관리, 단어장, 노트 등을 지원합니다</p>
+                        <img src="Images/learning.png" alt="나의 학습일지" class="program-icon">
+                        <h3 data-ko="나의 학습일지" data-en="My Learning Log">나의 학습일지</h3>
+                        <p data-ko="학습 기록부터 D-Day 관리, 단어장, 노트 등을 지원합니다." data-en="Supports study logs, D-Day countdowns, vocabulary, notes, and more.">학습 기록부터 D-Day 관리, 단어장, 노트 등을 지원합니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9P6WFJ3ZVLWP?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/gcalculator.png" alt="분할점수 계산기 아이콘" class="program-icon">
-                        <h3>분할점수 계산기</h3>
-                        <p>성취평가 분할점수를 위한 정답률 추정 계산기입니다. </p>
+                        <img src="Images/gcalculator.png" alt="분할점수 계산기" class="program-icon">
+                        <h3 data-ko="분할점수 계산기" data-en="Grade Cutoff Calculator">분할점수 계산기</h3>
+                        <p data-ko="성취평가 분할점수를 위한 정답률 추정 계산기입니다." data-en="A calculator for estimating correct answer rates for achievement-based grade cutoffs.">성취평가 분할점수를 위한 정답률 추정 계산기입니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9MXS1SMZWQ7D?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/mafiagamehelper.png" alt="마피아 게임 도우미 아이콘" class="program-icon">
-                        <h3>마피아 게임 도우미</h3>
-                        <p>교사의 진행을 도와줄 수 있는 교실용 마피아 게임 도우미 앱입니다.</p>
+                        <img src="Images/mafiagamehelper.png" alt="마피아 게임 도우미" class="program-icon">
+                        <h3 data-ko="마피아 게임 도우미" data-en="Mafia Game Helper">마피아 게임 도우미</h3>
+                        <p data-ko="교사의 진행을 도와줄 수 있는 교실용 마피아 게임 도우미 앱입니다." data-en="A classroom Mafia game assistant app to help teachers run the game smoothly.">교사의 진행을 도와줄 수 있는 교실용 마피아 게임 도우미 앱입니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9PGV3WMM7VTZ?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/plain.png" alt="Plain PDF 뷰어 아이콘" class="program-icon">
-                        <h3>Plain PDF 뷰어</h3>
-                        <p>빠르고 간편하게 PDF를 볼 수 있고 여러 주석을 달 수 있는 뷰어 앱입니다.</p>
+                        <img src="Images/plain.png" alt="Plain PDF 뷰어" class="program-icon">
+                        <h3 data-ko="Plain PDF 뷰어" data-en="Plain PDF Viewer">Plain PDF 뷰어</h3>
+                        <p data-ko="빠르고 간편하게 PDF를 볼 수 있고 여러 주석을 달 수 있는 뷰어 앱입니다." data-en="A fast and simple PDF viewer that also supports various annotation tools.">빠르고 간편하게 PDF를 볼 수 있고 여러 주석을 달 수 있는 뷰어 앱입니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9N5ND655PML6?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/plainimageviewer.png" alt="Plain 이미지 뷰어 아이콘" class="program-icon">
-                        <h3>Plain 이미지 뷰어</h3>
-                        <p>SVG, RAW 등 다양한 형식을 지원하는 심플한 윈도우용 이미지 뷰어 앱입니다.</p>
+                        <img src="Images/plainimageviewer.png" alt="Plain 이미지 뷰어" class="program-icon">
+                        <h3 data-ko="Plain 이미지 뷰어" data-en="Plain Image Viewer">Plain 이미지 뷰어</h3>
+                        <p data-ko="SVG, RAW 등 다양한 형식을 지원하는 심플한 윈도우용 이미지 뷰어 앱입니다." data-en="A simple Windows image viewer that supports a wide range of formats including SVG and RAW.">SVG, RAW 등 다양한 형식을 지원하는 심플한 윈도우용 이미지 뷰어 앱입니다.</p>
                     </div>
                 </a>
                 <a href="https://apps.microsoft.com/detail/9NXST7V46VZ2?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="program-link">
                     <div class="program-item fade-in">
-                        <img src="Images/plainflashcard.png" alt="Plain 플래시카드 아이콘" class="program-icon">
-                        <h3>Plain 플래시카드</h3>
-                        <p>단어 등을 학습하기 위해 간편하게 활용할 수 있는 플래시카드 학습 앱입니다.</p>
+                        <img src="Images/plainflashcard.png" alt="Plain 플래시카드" class="program-icon">
+                        <h3 data-ko="Plain 플래시카드" data-en="Plain Flashcard">Plain 플래시카드</h3>
+                        <p data-ko="단어 등을 학습하기 위해 간편하게 활용할 수 있는 플래시카드 학습 앱입니다." data-en="A simple flashcard app for studying vocabulary and other content.">단어 등을 학습하기 위해 간편하게 활용할 수 있는 플래시카드 학습 앱입니다.</p>
                     </div>
                 </a>
             </div>
@@ -146,8 +162,10 @@
 
     <section class="section" id="contact">
         <div class="container">
-            <h2 class="fade-in">연락하고 싶으시면</h2>
-            <p class="fade-in" style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #666;">
+            <h2 class="fade-in" data-ko="연락하고 싶으시면" data-en="Get in Touch">연락하고 싶으시면</h2>
+            <p class="fade-in" style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #666;"
+               data-ko="프로그램 사용하시면서 불편한 점이나 개선 사항이 있으시면 이메일로 연락 부탁드립니다!<br>MS Store에서 다운받으실 수 있어요."
+               data-en="If you have any feedback or suggestions while using our apps, please reach out by email!<br>You can download them from the Microsoft Store.">
                 프로그램 사용하시면서 불편한 점이나 개선 사항이 있으시면 이메일로 연락 부탁드립니다!<br>
                 MS Store에서 다운받으실 수 있어요.
             </p>
@@ -155,15 +173,15 @@
                 <div class="contact-item fade-in">
                     <span class="contact-icon">📧</span>
                     <div>
-                        <strong>이메일</strong><br>
+                        <strong data-ko="이메일" data-en="Email">이메일</strong><br>
                         nightskyworks@gmail.com
                     </div>
                 </div>
                 <div class="contact-item fade-in">
-                    <img src="Images/msstore.png" alt="Microsoft Store 아이콘" class="contact-icon-img">
+                    <img src="Images/msstore.png" alt="Microsoft Store" class="contact-icon-img">
                     <div>
                         <strong>Microsoft Store</strong><br>
-                        "수업함" 등 검색
+                        <span data-ko='"수업함" 등 검색' data-en='Search "Class Tools" etc.'>"수업함" 등 검색</span>
                     </div>
                 </div>
             </div>
@@ -177,5 +195,30 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        let currentLang = 'ko';
+
+        function toggleLang() {
+            currentLang = currentLang === 'ko' ? 'en' : 'ko';
+            applyLang(currentLang);
+        }
+
+        function applyLang(lang) {
+            document.documentElement.lang = lang;
+            document.getElementById('langBtn').textContent = lang === 'ko' ? 'EN' : '한국어';
+
+            document.querySelectorAll('[data-ko]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (!text) return;
+                if (el.tagName === 'A' || el.tagName === 'BUTTON') {
+                    el.textContent = text;
+                } else if (el.innerHTML.includes('<br>') || text.includes('<br>')) {
+                    el.innerHTML = text;
+                } else {
+                    el.textContent = text;
+                }
+            });
+        }
+    </script>
 </body>
 </html>
