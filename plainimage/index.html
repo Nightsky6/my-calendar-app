@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plain Image Viewer - Windows Image Viewer App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 { color: #2563eb; margin-bottom: 10px; }
+        h2 { color: #1e40af; margin-top: 30px; }
+        .subtitle { color: #666; font-size: 1.2em; margin-bottom: 30px; }
+        .container { margin: 20px 0; }
+        .feature-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .important {
+            background: #fef3c7;
+            padding: 15px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+        }
+        ul { padding-left: 25px; }
+        li { margin: 8px 0; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .lang-switcher {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .lang-btn {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-family: inherit;
+        }
+        .lang-btn:hover { background: #1e40af; }
+        [lang-content="en"] { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="toggleLang()">English</button>
+    </div>
+
+    <h1>Plain Image Viewer</h1>
+    <p class="subtitle">
+        <span lang-content="ko">빠르고 가볍게, 모든 이미지를 — Windows 네이티브 이미지 뷰어</span>
+        <span lang-content="en">Fast, Lightweight, Every Image — Windows Native Image Viewer</span>
+    </p>
+
+    <div class="container">
+
+        <h2>
+            <span lang-content="ko">애플리케이션 소개</span>
+            <span lang-content="en">About</span>
+        </h2>
+        <p>
+            <span lang-content="ko">
+                Plain Image Viewer는 Windows 환경에서 동작하는 빠르고 가벼운 네이티브 이미지 뷰어입니다.
+                JPEG, PNG, BMP, GIF, TIFF, WebP, SVG, RAW 등 다양한 이미지 형식을 지원하며,
+                복잡한 설치 없이 즉시 사용할 수 있습니다.
+            </span>
+            <span lang-content="en">
+                Plain Image Viewer is a fast and lightweight native Windows image viewer.
+                It supports a wide range of formats including JPEG, PNG, BMP, GIF, TIFF, WebP, SVG, and RAW,
+                and is ready to use instantly without complex setup.
+            </span>
+        </p>
+
+        <div class="feature-box">
+            <h3>
+                <span lang-content="ko">Plain Image Viewer를 선택하는 이유</span>
+                <span lang-content="en">Why Plain Image Viewer?</span>
+            </h3>
+            <ul>
+                <li>
+                    <span lang-content="ko"><strong>빠른 실행 속도:</strong> 가볍고 빠른 네이티브 Win32 기반으로 즉시 이미지를 열 수 있습니다</span>
+                    <span lang-content="en"><strong>Fast Launch:</strong> Opens images instantly with a lightweight native Win32 engine</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>다양한 형식 지원:</strong> JPG, PNG, BMP, GIF, TIFF, WebP, ICO, SVG, 다양한 RAW 포맷 지원</span>
+                    <span lang-content="en"><strong>Wide Format Support:</strong> JPG, PNG, BMP, GIF, TIFF, WebP, ICO, SVG, and major RAW formats</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>깔끔한 UI:</strong> Windows 11 디자인에 어울리는 Fluent 스타일 인터페이스</span>
+                    <span lang-content="en"><strong>Clean UI:</strong> Fluent-style interface designed for Windows 11</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>개인정보 보호:</strong> 인터넷 연결 없이 모든 기능을 로컬에서 처리</span>
+                    <span lang-content="en"><strong>Privacy-First:</strong> All features work locally without any internet connection</span>
+                </li>
+            </ul>
+        </div>
+
+        <h2>
+            <span lang-content="ko">주요 기능</span>
+            <span lang-content="en">Key Features</span>
+        </h2>
+        <ul>
+            <li>
+                <span lang-content="ko"><strong>이미지 탐색:</strong> 폴더 내 이미지를 키보드 또는 썸네일 바로 빠르게 탐색</span>
+                <span lang-content="en"><strong>Image Navigation:</strong> Browse images in a folder via keyboard or thumbnail strip</span>
+            </li>
+            <li>
+                <span lang-content="ko"><strong>썸네일 필름스트립:</strong> 하단 썸네일 바로 폴더 내 이미지를 한눈에 확인</span>
+                <span lang-content="en"><strong>Thumbnail Filmstrip:</strong> Preview all images in a folder at a glance from the bottom bar</span>
+            </li>
+            <li>
+                <span lang-content="ko"><strong>확대/축소 및 이동:</strong> 마우스 휠 확대/축소, 드래그 이동 지원</span>
+                <span lang-content="en"><strong>Zoom &amp; Pan:</strong> Mouse wheel zoom and drag-to-pan support</span>
+            </li>
+            <li>
+                <span lang-content="ko"><strong>이미지 회전 및 반전:</strong> 좌/우 회전 및 좌우/상하 반전</span>
+                <span lang-content="en"><strong>Rotate &amp; Flip:</strong> Rotate left/right and flip horizontally/vertically</span>
+            </li>
+            <li>
+                <span lang-content="ko"><strong>이미지 보정:</strong> 밝기, 대비, 채도, 선명도 등 기본 보정 기능</span>
+                <span lang-content="en"><strong>Image Adjustments:</strong> Brightness, contrast, saturation, and sharpness controls</span>
+            </li>
+            <li>
+                <span lang-content="ko"><strong>슬라이드쇼:</strong> 자동 슬라이드쇼 재생 지원</span>
+                <span lang-content="en"><strong>Slideshow:</strong> Auto-play slideshow support</span>
+            </li>
+            <li>
+                <span lang-content="ko"><strong>EXIF 정보 보기:</strong> 촬영 날짜, 카메라 모델, GPS 등 메타데이터 확인</span>
+                <span lang-content="en"><strong>EXIF Viewer:</strong> View metadata including date taken, camera model, and GPS info</span>
+            </li>
+            <li>
+                <span lang-content="ko"><strong>파일 연결 설정:</strong> 원하는 이미지 형식을 기본 앱으로 등록</span>
+                <span lang-content="en"><strong>File Association:</strong> Set Plain Image Viewer as the default app for your preferred formats</span>
+            </li>
+            <li>
+                <span lang-content="ko"><strong>배경화면 설정:</strong> 현재 이미지를 Windows 배경화면으로 즉시 적용</span>
+                <span lang-content="en"><strong>Set as Wallpaper:</strong> Apply the current image as your Windows desktop wallpaper instantly</span>
+            </li>
+        </ul>
+
+        <h2>
+            <span lang-content="ko">지원 이미지 형식</span>
+            <span lang-content="en">Supported Formats</span>
+        </h2>
+        <div class="feature-box">
+            <ul>
+                <li>
+                    <span lang-content="ko"><strong>일반 형식:</strong> JPEG, PNG, BMP, GIF, TIFF, WebP, ICO</span>
+                    <span lang-content="en"><strong>Standard:</strong> JPEG, PNG, BMP, GIF, TIFF, WebP, ICO</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>벡터:</strong> SVG</span>
+                    <span lang-content="en"><strong>Vector:</strong> SVG</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>RAW 형식:</strong> CR2, CR3, NEF, ARW, DNG, ORF, RW2 등 주요 카메라 RAW 포맷</span>
+                    <span lang-content="en"><strong>RAW:</strong> CR2, CR3, NEF, ARW, DNG, ORF, RW2, and more</span>
+                </li>
+            </ul>
+        </div>
+
+        <h2>
+            <span lang-content="ko">단축키</span>
+            <span lang-content="en">Keyboard Shortcuts</span>
+        </h2>
+        <div class="feature-box">
+            <ul>
+                <li>
+                    <span lang-content="ko"><strong>← / →:</strong> 이전 / 다음 이미지</span>
+                    <span lang-content="en"><strong>← / →:</strong> Previous / Next image</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>Ctrl + O:</strong> 파일 열기</span>
+                    <span lang-content="en"><strong>Ctrl + O:</strong> Open file</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>Ctrl + E:</strong> EXIF 정보 보기</span>
+                    <span lang-content="en"><strong>Ctrl + E:</strong> View EXIF info</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>Ctrl + S:</strong> 이미지 저장</span>
+                    <span lang-content="en"><strong>Ctrl + S:</strong> Save image</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>F5:</strong> 슬라이드쇼 시작/중지</span>
+                    <span lang-content="en"><strong>F5:</strong> Start / Stop slideshow</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>F11:</strong> 전체 화면</span>
+                    <span lang-content="en"><strong>F11:</strong> Toggle fullscreen</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>+ / −:</strong> 확대 / 축소</span>
+                    <span lang-content="en"><strong>+ / −:</strong> Zoom in / Zoom out</span>
+                </li>
+                <li>
+                    <span lang-content="ko"><strong>0:</strong> 원본 크기로 초기화</span>
+                    <span lang-content="en"><strong>0:</strong> Reset to original size</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <span lang-content="ko">
+                <strong>개인정보:</strong> Plain Image Viewer는 인터넷에 연결하지 않으며, 사용자의 이미지 및 데이터를
+                외부로 전송하지 않습니다. 모든 처리는 사용자 기기 내에서만 이루어집니다.
+            </span>
+            <span lang-content="en">
+                <strong>Privacy:</strong> Plain Image Viewer does not connect to the internet and never transmits
+                your images or data externally. All processing happens entirely on your device.
+            </span>
+        </div>
+
+        <h2>
+            <span lang-content="ko">시스템 요구 사항</span>
+            <span lang-content="en">System Requirements</span>
+        </h2>
+        <ul>
+            <li>
+                <span lang-content="ko">Windows 10 이상 (Windows 11 권장)</span>
+                <span lang-content="en">Windows 10 or later (Windows 11 recommended)</span>
+            </li>
+            <li>
+                <span lang-content="ko">x64 아키텍처</span>
+                <span lang-content="en">x64 architecture</span>
+            </li>
+            <li>
+                <span lang-content="ko">인터넷 연결 불필요</span>
+                <span lang-content="en">No internet connection required</span>
+            </li>
+        </ul>
+
+        <h2>
+            <span lang-content="ko">다운로드</span>
+            <span lang-content="en">Download</span>
+        </h2>
+        <p>
+            <span lang-content="ko">Plain Image Viewer는 Microsoft Store에서 다운로드할 수 있습니다.</span>
+            <span lang-content="en">Plain Image Viewer is available on the Microsoft Store.</span>
+        </p>
+
+    </div>
+
+    <footer>
+        <p>
+            <a href="privacy-policy.html">
+                <span lang-content="ko">개인정보처리방침</span>
+                <span lang-content="en">Privacy Policy</span>
+            </a> |
+            <a href="terms-of-service.html">
+                <span lang-content="ko">이용약관</span>
+                <span lang-content="en">Terms of Service</span>
+            </a>
+        </p>
+        <p>
+            <span lang-content="ko">문의: nightskyworks@gmail.com</span>
+            <span lang-content="en">Contact: nightskyworks@gmail.com</span>
+        </p>
+        <p>&copy; 2025-2026 Nightsky Works. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentLang = 'ko';
+
+        function toggleLang() {
+            currentLang = currentLang === 'ko' ? 'en' : 'ko';
+            const otherLang = currentLang === 'ko' ? 'en' : 'ko';
+
+            document.querySelectorAll('[lang-content="' + currentLang + '"]')
+                .forEach(el => el.style.display = '');
+            document.querySelectorAll('[lang-content="' + otherLang + '"]')
+                .forEach(el => el.style.display = 'none');
+
+            document.querySelector('.lang-btn').textContent =
+                currentLang === 'ko' ? 'English' : '한국어';
+            document.documentElement.lang = currentLang;
+        }
+    </script>
+
+</body>
+</html>
