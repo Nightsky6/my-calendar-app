@@ -316,16 +316,16 @@
 
     <script>
         let currentLang = 'ko';
-
+    
         function toggleLang() {
             currentLang = currentLang === 'ko' ? 'en' : 'ko';
             const otherLang = currentLang === 'ko' ? 'en' : 'ko';
-
+    
             document.querySelectorAll('[lang-content="' + currentLang + '"]')
-                .forEach(el => el.style.display = '');
+                .forEach(el => el.style.display = 'inline');
             document.querySelectorAll('[lang-content="' + otherLang + '"]')
                 .forEach(el => el.style.display = 'none');
-
+    
             document.querySelector('.lang-btn').textContent =
                 currentLang === 'ko' ? 'English' : '한국어';
             document.documentElement.lang = currentLang;
