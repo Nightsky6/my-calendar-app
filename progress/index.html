@@ -15,14 +15,21 @@
         }
 
         header {
-            background: #2563eb;
-            color: white;
+            background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 40%, #a5b4fc 75%, #bfdbfe 100%);
+            color: #3730a3;
             padding: 64px 20px;
             text-align: center;
         }
+        header p { font-size: 1em; opacity: 0.75; margin-bottom: 28px; }
+        .btn-white { background: white; color: #5b21b6; }
+        .btn-outline {
+            background: transparent;
+            color: #3730a3;
+            border: 2px solid rgba(99, 60, 180, 0.45);
+            margin-left: 10px;
+        }
         header .app-icon { font-size: 52px; margin-bottom: 16px; }
         header h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; }
-        header p { font-size: 1em; opacity: 0.85; margin-bottom: 28px; }
 
         .btn {
             display: inline-block;
@@ -34,14 +41,6 @@
             transition: opacity 0.15s;
         }
         .btn:hover { opacity: 0.85; }
-        .btn-white { background: white; color: #2563eb; }
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255,255,255,0.6);
-            margin-left: 10px;
-        }
-
         .section {
             max-width: 720px;
             margin: 0 auto;
