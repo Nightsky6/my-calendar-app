@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보 처리방침 - 수업진도 도우미</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 { color: #2563eb; }
+        h2 { color: #1d4ed8; margin-top: 30px; }
+        .update-date { color: #666; font-size: 0.9em; margin-bottom: 30px; }
+        .important {
+            background: #eff6ff;
+            padding: 15px;
+            border-left: 4px solid #2563eb;
+            margin: 20px 0;
+        }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul { padding-left: 25px; }
+        li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <h1>개인정보 처리방침</h1>
+    <p class="update-date">최종 업데이트: 2026년 6월 1일</p>
+
+    <div class="important">
+        <strong>수업진도 도우미는 개인정보를 수집하거나 외부로 전송하지 않습니다.</strong><br>
+        단, 수업 진도 데이터를 교무실 등 외부에서 조회하기 위해 선택적으로 Firebase 클라우드에 저장할 수 있습니다.
+        이 경우에도 저장되는 내용은 교사가 직접 입력한 수업 진도 정보에 한하며,
+        개인을 식별할 수 있는 정보는 수집하지 않습니다.
+    </div>
+
+    <h2>1. 개요</h2>
+    <p>본 개인정보 처리방침은 Nightsky Works가 개발한 수업진도 도우미("본 앱")가 사용자 정보를 어떻게 처리하는지 설명합니다.
+    본 앱은 교사가 수업 진도를 기록·관리할 수 있도록 설계된 Windows 데스크톱 애플리케이션입니다.</p>
+
+    <h2>2. 수집하는 정보</h2>
+
+    <div class="important">
+        <strong>본 앱은 개인 식별 정보를 일절 수집하지 않습니다.</strong>
+        <ul style="margin: 10px 0;">
+            <li>별도의 계정 또는 로그인 불필요</li>
+            <li>사용자 분석 또는 통계 정보 미수집</li>
+            <li>기기 정보 미전송</li>
+            <li>쿠키 또는 추적 기술 미사용</li>
+            <li>광고 및 마케팅 정보 미수집</li>
+        </ul>
+    </div>
+
+    <h2>3. 앱 작동 방식</h2>
+    <p>수업진도 도우미는 다음과 같이 동작합니다:</p>
+    <ul>
+        <li><strong>로컬 저장:</strong> 과목, 진도 기록 등 모든 데이터는 기본적으로 사용자의 기기 내
+            (<code>%LocalAppData%\ProgressApp</code>)에 JSON 파일 형태로 저장됩니다.</li>
+        <li><strong>설정 저장:</strong> 학교명, 학년·반, 테마, 창 위치 등 앱 설정도 동일한 로컬 경로에 저장됩니다.</li>
+        <li><strong>클라우드 동기화 (선택):</strong> 교사가 직접 동기화 버튼을 눌렀을 때에만
+            Firebase Realtime Database에 수업 진도 데이터가 전송됩니다.
+            이 기능은 웹에서 수업 진도를 조회하기 위한 목적으로만 사용됩니다.</li>
+        <li><strong>익명 인증:</strong> Firebase 접속 시 Google Firebase의 익명 인증 기능을 사용하며,
+            사용자를 특정할 수 있는 정보는 전혀 저장되지 않습니다.</li>
+    </ul>
+
+    <h2>4. 로컬 데이터 저장</h2>
+    <p>본 앱이 사용자 기기에 저장하는 데이터는 다음과 같습니다:</p>
+    <ul>
+        <li><strong>과목 목록 및 진도 기록:</strong> <code>%LocalAppData%\ProgressApp\</code> 폴더 내 JSON 파일</li>
+        <li><strong>앱 설정:</strong> 학교명, 학년·반, 테마, 백드롭, 창 위치/크기 등</li>
+    </ul>
+    <p>이 데이터는 해당 기기를 벗어나지 않으며, 앱 제거 후 해당 폴더를 삭제하면 완전히 제거됩니다.</p>
+
+    <h2>5. 클라우드 데이터 저장 (선택적)</h2>
+    <p>동기화 기능을 사용할 경우, 아래 정보가 Firebase Realtime Database에 저장됩니다:</p>
+    <ul>
+        <li>교사가 등록한 학교명, 학년·반 정보</li>
+        <li>과목명 및 과목별 수업 진도 기록 (날짜, 쪽수, 내용)</li>
+    </ul>
+    <p>저장된 데이터는 웹 서비스를 통해 과목 비밀번호 입력 후 조회할 수 있습니다.
+    Firebase 데이터는 교사가 앱 내에서 삭제 시 Firebase에서도 함께 삭제됩니다.</p>
+
+    <h2>6. 제3자 서비스</h2>
+    <ul>
+        <li><strong>Google Firebase:</strong> 선택적 클라우드 동기화에 사용됩니다.
+            Firebase의 개인정보 처리방침은
+            <a href="https://firebase.google.com/support/privacy" target="_blank">여기</a>에서 확인할 수 있습니다.</li>
+        <li><strong>교육부 NEIS API:</strong> 학교 검색 기능에 사용됩니다. 검색어만 전송되며 개인정보는 전송되지 않습니다.</li>
+    </ul>
+
+    <h2>7. 아동 개인정보 보호</h2>
+    <p>본 앱은 어떠한 사용자의 개인정보도 수집하지 않습니다. 아동을 포함한 모든 연령에서 안전하게 사용할 수 있습니다.</p>
+
+    <h2>8. 사용자의 권리</h2>
+    <ul>
+        <li><strong>로컬 데이터 삭제:</strong> 앱 내에서 과목 및 진도를 직접 삭제하거나,
+            <code>%LocalAppData%\ProgressApp</code> 폴더를 삭제하면 됩니다.</li>
+        <li><strong>클라우드 데이터 삭제:</strong> 앱에서 과목 또는 진도 삭제 시 Firebase에서도 함께 삭제됩니다.</li>
+        <li><strong>동기화 거부:</strong> 동기화 버튼을 사용하지 않으면 클라우드에 어떠한 데이터도 전송되지 않습니다.</li>
+    </ul>
+
+    <h2>9. 개인정보 처리방침 변경</h2>
+    <p>본 방침은 필요에 따라 업데이트될 수 있습니다. 변경 시 이 페이지의 "최종 업데이트" 날짜가 수정됩니다.</p>
+
+    <h2>10. 문의</h2>
+    <p>개인정보 처리방침에 대한 문의는 아래로 연락해 주세요:</p>
+    <p><strong>이메일:</strong> nightskyworks@gmail.com</p>
+
+    <p style="margin-top: 40px;"><a href="index.html">← 홈으로 돌아가기</a></p>
+</body>
+</html>
