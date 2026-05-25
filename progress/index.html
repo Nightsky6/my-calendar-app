@@ -14,254 +14,118 @@
             line-height: 1.8;
         }
 
-        /* 헤더 */
         header {
-            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 60%, #3b82f6 100%);
+            background: #2563eb;
             color: white;
-            padding: 60px 20px 80px;
+            padding: 64px 20px;
             text-align: center;
         }
-        header .app-icon {
-            font-size: 64px;
-            margin-bottom: 16px;
-        }
-        header h1 {
-            font-size: 2.4em;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-        header p {
-            font-size: 1.1em;
-            opacity: 0.88;
-            max-width: 520px;
-            margin: 0 auto 28px;
-        }
-        .btn-download {
+        header .app-icon { font-size: 52px; margin-bottom: 16px; }
+        header h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; }
+        header p { font-size: 1em; opacity: 0.85; margin-bottom: 28px; }
+
+        .btn {
             display: inline-block;
-            background: white;
-            color: #1d4ed8;
-            font-weight: 700;
-            font-size: 1em;
-            padding: 14px 36px;
+            padding: 12px 32px;
             border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95em;
             text-decoration: none;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-            transition: transform 0.15s, box-shadow 0.15s;
+            transition: opacity 0.15s;
         }
-        .btn-download:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        .btn:hover { opacity: 0.85; }
+        .btn-white { background: white; color: #2563eb; }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.6);
+            margin-left: 10px;
         }
 
-        /* 주요 기능 */
         .section {
-            max-width: 860px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 56px 20px;
         }
         .section h2 {
-            font-size: 1.7em;
+            font-size: 1.3em;
             color: #1d4ed8;
-            margin-bottom: 32px;
-            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e7ff;
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
+        ul.feature-list {
+            list-style: none;
+            padding: 0;
         }
-        .feature-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px 24px;
-            box-shadow: 0 2px 12px rgba(37,99,235,0.07);
-            border: 1px solid #e0e7ff;
-            transition: box-shadow 0.15s;
+        ul.feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.97em;
+            display: flex;
+            gap: 10px;
         }
-        .feature-card:hover {
-            box-shadow: 0 6px 24px rgba(37,99,235,0.13);
-        }
-        .feature-card .icon {
-            font-size: 2em;
-            margin-bottom: 12px;
-        }
-        .feature-card h3 {
-            font-size: 1.05em;
-            color: #1e3a8a;
-            margin-bottom: 8px;
-        }
-        .feature-card p {
-            font-size: 0.92em;
-            color: #555;
-            line-height: 1.7;
-        }
+        ul.feature-list li:last-child { border-bottom: none; }
+        ul.feature-list .icon { width: 24px; text-align: center; flex-shrink: 0; }
 
-        /* 구분선 */
         .divider {
             border: none;
             border-top: 1px solid #e2e8f0;
-            max-width: 860px;
+            max-width: 720px;
             margin: 0 auto;
         }
 
-        /* 앱 소개 배너 */
-        .highlight {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 20px 24px;
-            border-radius: 0 12px 12px 0;
-            margin: 0 0 32px;
-            font-size: 0.97em;
-            color: #1e3a8a;
-        }
-
-        /* 웹 서비스 안내 */
-        .web-section {
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .web-section h2 {
-            font-size: 1.6em;
-            margin-bottom: 14px;
-        }
-        .web-section p {
-            opacity: 0.88;
-            max-width: 500px;
-            margin: 0 auto 28px;
-            font-size: 0.97em;
-        }
-        .btn-web {
-            display: inline-block;
-            background: white;
-            color: #1d4ed8;
-            font-weight: 700;
-            padding: 12px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.97em;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-            transition: transform 0.15s;
-        }
-        .btn-web:hover { transform: translateY(-2px); }
-
-        /* 푸터 */
         footer {
             background: #1e293b;
             color: #94a3b8;
             text-align: center;
-            padding: 36px 20px;
-            font-size: 0.88em;
-            line-height: 2;
+            padding: 32px 20px;
+            font-size: 0.87em;
+            line-height: 2.2;
         }
-        footer a {
-            color: #93c5fd;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+        footer .brand { color: white; font-weight: 700; }
+        footer a { color: #93c5fd; text-decoration: none; margin: 0 8px; }
         footer a:hover { text-decoration: underline; }
-        footer .brand {
-            color: white;
-            font-weight: 700;
-            font-size: 1em;
-            margin-bottom: 6px;
-        }
     </style>
 </head>
 <body>
 
-    <!-- 헤더 -->
     <header>
         <div class="app-icon">📚</div>
         <h1>수업진도 도우미</h1>
-        <p>교사를 위한 수업 진도 기록 및 관리 앱.<br>
-           간편하게 기록하고, 웹에서도 확인하세요.</p>
-        <a href="#" class="btn-download">⬇ 다운로드 (Windows)</a>
+        <p>교사를 위한 수업 진도 기록 앱.<br>간편하게 기록하고, 웹에서도 확인하세요.</p>
+        <a href="#" class="btn btn-white">⬇ 다운로드 (Windows)</a>
+        <a href="https://classlog.kr" class="btn btn-outline">📡 웹 진도 조회</a>
     </header>
 
-    <!-- 주요 기능 -->
     <section class="section">
         <h2>주요 기능</h2>
-
-        <div class="highlight">
-            수업진도 도우미는 교실 컴퓨터에서 바로 사용할 수 있는 무료 Windows 앱입니다.
-            별도의 회원가입 없이 설치 즉시 사용 가능합니다.
-        </div>
-
-        <div class="features">
-            <div class="feature-card">
-                <div class="icon">📝</div>
-                <h3>과목별 진도 기록</h3>
-                <p>과목을 등록하고 날짜, 쪽수, 내용을 간편하게 기록합니다. 지난 날짜로도 소급 입력이 가능합니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">📅</div>
-                <h3>학년도·학기 관리</h3>
-                <p>학년도와 학기별로 데이터를 분리 관리합니다. 연도가 바뀌어도 이전 기록이 보존됩니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🌐</div>
-                <h3>웹 동기화</h3>
-                <p>동기화 버튼 한 번으로 교무실 PC나 스마트폰 브라우저에서 수업 진도를 조회할 수 있습니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🔒</div>
-                <h3>비밀번호 보호</h3>
-                <p>과목별 비밀번호를 설정하면 웹에서 해당 비밀번호를 입력해야만 진도를 열람할 수 있습니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🌙</div>
-                <h3>다크 모드 지원</h3>
-                <p>라이트·다크 모드를 지원하며, 아크릴·마이카 배경 효과로 쾌적한 사용 환경을 제공합니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🏫</div>
-                <h3>학교 검색 연동</h3>
-                <p>교육부 NEIS API를 통해 학교를 검색하고 등록할 수 있습니다.</p>
-            </div>
-        </div>
+        <ul class="feature-list">
+            <li><span class="icon">📝</span><span>과목을 등록하고 날짜, 쪽수, 내용을 간편하게 기록합니다. 지난 날짜로도 소급 입력이 가능합니다.</span></li>
+            <li><span class="icon">📅</span><span>학년도·학기별로 데이터를 분리 관리하여 연도가 바뀌어도 이전 기록이 보존됩니다.</span></li>
+            <li><span class="icon">🌐</span><span>동기화 버튼 한 번으로 교무실 PC나 스마트폰에서 수업 진도를 조회할 수 있습니다.</span></li>
+            <li><span class="icon">🔒</span><span>과목별 비밀번호를 설정하면 웹에서 비밀번호 입력 후에만 진도를 열람할 수 있습니다.</span></li>
+            <li><span class="icon">🌙</span><span>라이트·다크 모드 및 아크릴·마이카 배경 효과를 지원합니다.</span></li>
+            <li><span class="icon">🏫</span><span>교육부 NEIS API를 통해 학교를 검색하고 등록할 수 있습니다.</span></li>
+        </ul>
     </section>
 
     <hr class="divider">
 
-    <!-- 웹 서비스 안내 -->
-    <div class="web-section">
-        <h2>📡 웹에서도 확인하세요</h2>
-        <p>앱에서 동기화한 수업 진도를 웹 브라우저에서 언제 어디서나 조회할 수 있습니다.
-           과목별 비밀번호로 안전하게 보호됩니다.</p>
-        <a href="viewer/index.html" class="btn-web">웹 진도 조회 바로가기 →</a>
-    </div>
-
-    <!-- 시스템 요구사항 -->
     <section class="section">
         <h2>시스템 요구사항</h2>
-        <div class="features">
-            <div class="feature-card">
-                <div class="icon">💻</div>
-                <h3>운영체제</h3>
-                <p>Windows 10 (버전 1903) 이상<br>Windows 11 권장</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">⚙️</div>
-                <h3>런타임</h3>
-                <p>.NET 8 런타임<br>Windows App SDK 2.1 이상</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">📦</div>
-                <h3>설치 용량</h3>
-                <p>약 50MB 이하<br>별도 서버 불필요</p>
-            </div>
-        </div>
+        <ul class="feature-list">
+            <li><span class="icon">💻</span><span>Windows 10 (버전 1903) 이상 · Windows 11 권장</span></li>
+            <li><span class="icon">⚙️</span><span>.NET 8 런타임 · Windows App SDK 2.1 이상</span></li>
+            <li><span class="icon">📦</span><span>설치 용량 약 50MB 이하 · 별도 서버 불필요</span></li>
+        </ul>
     </section>
 
-    <!-- 푸터 -->
     <footer>
         <div class="brand">Nightsky Works</div>
         <div>수업진도 도우미 &nbsp;|&nbsp; © 2026 Nightsky Works. All rights reserved.</div>
-        <div style="margin-top: 8px;">
+        <div>
             <a href="privacy.html">개인정보 처리방침</a>
             <a href="terms.html">이용약관</a>
             <a href="mailto:nightskyworks@gmail.com">문의하기</a>
