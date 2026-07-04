@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plain NoteSpace - Simple Note Workspace</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.7;
+            color: #1e1e2e;
+            background: #fafafa;
+        }
+        header { margin-bottom: 32px; }
+        h1 { font-size: 2.2em; color: #2563eb; margin-bottom: 8px; }
+        .subtitle { color: #555; font-size: 1.1em; }
+        h2 { color: #1e40af; margin: 36px 0 12px; font-size: 1.3em; }
+        h3 { color: #374151; margin: 20px 0 8px; }
+        .feature-box {
+            background: #f0f4ff;
+            border-left: 4px solid #2563eb;
+            padding: 18px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        .highlight {
+            background: #fff7ed;
+            border-left: 4px solid #f59e0b;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .note {
+            background: #f8fafc;
+            border-left: 4px solid #64748b;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        ul { padding-left: 22px; }
+        li { margin: 7px 0; }
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+        footer a { color: #2563eb; text-decoration: none; margin: 0 8px; }
+        footer a:hover { text-decoration: underline; }
+        .badge {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 4px 4px 4px 0;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 24px;
+        }
+        .lang-switch button {
+            border: 1px solid #cbd5e1;
+            background: white;
+            color: #334155;
+            padding: 6px 12px;
+            border-radius: 999px;
+            cursor: pointer;
+            margin-left: 6px;
+            font-size: 0.9em;
+        }
+        .lang-switch button.active {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button id="koBtn" class="active" onclick="setLanguage('ko')">한국어</button>
+        <button id="enBtn" onclick="setLanguage('en')">English</button>
+    </div>
+
+    <!-- Korean -->
+    <div id="ko" class="lang-section active">
+        <header>
+            <h1>📝 Plain NoteSpace</h1>
+            <p class="subtitle">Windows용 심플한 노트 작업 공간</p>
+        </header>
+
+        <section>
+            <h2>앱 소개</h2>
+            <p>
+                Plain NoteSpace는 글쓰기, 정리, 일별 기록을 한곳에서 관리할 수 있는
+                Windows용 노트 앱입니다. 서식 있는 노트 작성, 여러 노트 탭 관리,
+                날짜별 메모, 시각적인 파일 정리, OneDrive 동기화 기능을 통해
+                나만의 노트 공간을 가볍고 편하게 만들 수 있습니다.
+            </p>
+
+            <div class="feature-box">
+                <h3>주요 기능</h3>
+                <ul>
+                    <li><strong>서식 있는 노트 작성:</strong> 글꼴, 크기, 굵게, 기울임, 밑줄, 강조 등 기본 서식 지원</li>
+                    <li><strong>탭 기반 편집:</strong> 여러 노트를 동시에 열고 빠르게 전환하며 작업</li>
+                    <li><strong>자동 저장:</strong> 작업 중인 노트를 일정 간격으로 자동 저장</li>
+                    <li><strong>일별 메모:</strong> 캘린더에서 날짜를 선택해 하루 기록을 작성하고 관리</li>
+                    <li><strong>파일 공간 보기:</strong> 노트와 폴더를 시각적인 카드 형태로 확인하고 정리</li>
+                    <li><strong>노트 검색 및 최근 파일:</strong> 자주 사용하는 노트에 빠르게 접근</li>
+                    <li><strong>내보내기:</strong> 작성한 노트를 TXT 또는 HTML 형식으로 내보내기</li>
+                    <li><strong>OneDrive 동기화:</strong> Microsoft 계정으로 로그인하여 노트 파일을 OneDrive에 동기화</li>
+                    <li><strong>테마:</strong> 라이트 / 다크 / 시스템 설정 자동 적용</li>
+                    <li><strong>배경 효과:</strong> Mica / Acrylic 효과 지원</li>
+                    <li><strong>다국어:</strong> 한국어 · 영어 · 일본어 · 중국어 간체 지원</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <strong>🔒 개인정보 안내:</strong>
+                기본적으로 노트 파일은 사용자의 기기에 저장됩니다.
+                OneDrive 동기화 기능을 사용하는 경우에만 사용자가 로그인한 Microsoft 계정의 OneDrive로
+                노트 파일이 업로드됩니다. 앱은 광고나 분석 목적으로 노트 내용을 수집하지 않습니다.
+            </div>
+
+            <div class="note">
+                <strong>💡 이런 분께 추천합니다:</strong>
+                복잡한 협업 도구보다 가볍게 실행되는 개인 노트 앱을 원하거나,
+                수업 준비, 업무 메모, 하루 기록, 아이디어 정리를 한곳에서 관리하고 싶은 사용자에게 적합합니다.
+            </div>
+        </section>
+
+        <section>
+            <h2>시스템 요구사항</h2>
+            <ul>
+                <li>Windows 10 버전 1903 이상 / Windows 11 권장</li>
+                <li>.NET 8.0 Runtime</li>
+                <li>x86 / x64 / ARM64</li>
+                <li>OneDrive 동기화 사용 시 Microsoft 계정 필요</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>다운로드</h2>
+            <p>Plain NoteSpace는 Microsoft Store에서 다운로드할 수 있습니다.</p>
+            <p>
+                <span class="badge">Microsoft Store</span>
+                <span class="badge">무료</span>
+                <span class="badge">광고 없음</span>
+                <span class="badge">Windows</span>
+            </p>
+        </section>
+    </div>
+
+    <!-- English -->
+    <div id="en" class="lang-section">
+        <header>
+            <h1>📝 Plain NoteSpace</h1>
+            <p class="subtitle">A simple note workspace for Windows</p>
+        </header>
+
+        <section>
+            <h2>About the App</h2>
+            <p>
+                Plain NoteSpace is a simple note-taking app for Windows that helps you write,
+                organize, and manage daily notes in one place. With rich text editing,
+                multiple note tabs, calendar-based daily notes, visual file organization,
+                and optional OneDrive sync, you can create your own lightweight note workspace.
+            </p>
+
+            <div class="feature-box">
+                <h3>Main Features</h3>
+                <ul>
+                    <li><strong>Rich text editing:</strong> Supports basic formatting such as font, size, bold, italic, underline, and highlighting</li>
+                    <li><strong>Tabbed editing:</strong> Open multiple notes and switch between them easily</li>
+                    <li><strong>Auto save:</strong> Automatically saves your work at regular intervals</li>
+                    <li><strong>Daily notes:</strong> Select a date from the calendar and manage notes by day</li>
+                    <li><strong>Visual file space:</strong> View and organize notes and folders as visual cards</li>
+                    <li><strong>Search and recent files:</strong> Quickly access frequently used notes</li>
+                    <li><strong>Export:</strong> Export your notes as TXT or HTML files</li>
+                    <li><strong>OneDrive sync:</strong> Sign in with your Microsoft account to sync note files to OneDrive</li>
+                    <li><strong>Themes:</strong> Supports light, dark, and system theme modes</li>
+                    <li><strong>Backdrop effects:</strong> Supports Mica and Acrylic effects</li>
+                    <li><strong>Multilingual support:</strong> Korean, English, Japanese, and Simplified Chinese</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <strong>🔒 Privacy Notice:</strong>
+                By default, your note files are stored on your device.
+                If you choose to use OneDrive sync, your note files are uploaded only to
+                the OneDrive account you sign in with. The app does not collect note contents
+                for advertising or analytics purposes.
+            </div>
+
+            <div class="note">
+                <strong>💡 Recommended for:</strong>
+                Users who want a lightweight personal note app rather than a complex collaboration tool.
+                It is useful for class preparation, work notes, daily journaling, and organizing ideas.
+            </div>
+        </section>
+
+        <section>
+            <h2>System Requirements</h2>
+            <ul>
+                <li>Windows 10 version 1903 or later / Windows 11 recommended</li>
+                <li>.NET 8.0 Runtime</li>
+                <li>x86 / x64 / ARM64</li>
+                <li>Microsoft account required for OneDrive sync</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Download</h2>
+            <p>Plain NoteSpace is available from the Microsoft Store.</p>
+            <p>
+                <span class="badge">Microsoft Store</span>
+                <span class="badge">Free</span>
+                <span class="badge">No Ads</span>
+                <span class="badge">Windows</span>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>
+            <a href="privacy-policy.html">개인정보 처리방침 / Privacy Policy</a>
+            <a href="terms-of-service.html">사용약관 / Terms of Service</a>
+        </p>
+        <p style="margin-top:10px;">Contact: nightskyworks@gmail.com</p>
+        <p style="margin-top:6px;">&copy; 2026 Plain NoteSpace. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const ko = document.getElementById('ko');
+            const en = document.getElementById('en');
+            const koBtn = document.getElementById('koBtn');
+            const enBtn = document.getElementById('enBtn');
+
+            if (lang === 'ko') {
+                ko.classList.add('active');
+                en.classList.remove('active');
+                koBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                document.documentElement.lang = 'ko';
+                document.title = 'Plain NoteSpace - 심플한 노트 작업 공간';
+            } else {
+                en.classList.add('active');
+                ko.classList.remove('active');
+                enBtn.classList.add('active');
+                koBtn.classList.remove('active');
+                document.documentElement.lang = 'en';
+                document.title = 'Plain NoteSpace - Simple Note Workspace';
+            }
+        }
+    </script>
+</body>
+</html>
