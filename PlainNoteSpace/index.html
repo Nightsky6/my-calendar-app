@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plain NoteSpace - Simple Note Workspace</title>
+    <link rel="icon" href="plainnotespace.png" type="image/png">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -26,6 +27,17 @@
             padding: 18px 20px;
             border-radius: 0 8px 8px 0;
             margin: 16px 0;
+        }
+        .app-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .app-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
         }
         .highlight {
             background: #fff7ed;
@@ -94,7 +106,10 @@
     <!-- Korean -->
     <div id="ko" class="lang-section active">
         <header>
-            <h1>📝 Plain NoteSpace</h1>
+            <h1 class="app-title">
+                <img src="plainnotespace.png" alt="Plain NoteSpace icon" class="app-icon">
+                <span>Plain NoteSpace</span>
+            </h1>
             <p class="subtitle">Windows용 심플한 노트 작업 공간</p>
         </header>
 
